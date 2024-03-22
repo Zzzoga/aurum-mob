@@ -1,0 +1,25 @@
+@media only screen and (max-width : 480px) {
+    section.top__screen .section__wrapper {
+        max-width: 100%;
+    }
+    
+    .num.num__1 {
+        right: 20px;
+        bottom: 20px;
+    }
+    
+    .num.num__2 {
+        right: 80px;
+        bottom: 80px;
+    }
+    
+    .num.num__3 {
+        right: 160px;
+        bottom: 125px;
+    }
+    
+    .num.num__4 {
+        left: 60px;
+        top: 90px;
+    }
+}

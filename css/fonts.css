@@ -1,0 +1,24 @@
+@font-face {
+	font-family: "Venryn Sans";
+	src: url("../fonts/VenrynSans-Regular.ttf");
+	font-style: normal;
+	font-weight: 400;
+}
+@font-face {
+	font-family: "Venryn Sans";
+	src: url("../fonts/VenrynSans-Bold.ttf");
+	font-style: normal;
+	font-weight: 700;
+}
+@font-face {
+	font-family: "Biolilbert";
+	src: url("../fonts/Biolilbert-Rg.ttf");
+	font-style: normal;
+	font-weight: 400;
+}
+@font-face {
+	font-family: "Biolilbert";
+	src: url("../fonts/Biolilbert-Bd.ttf");
+	font-style: normal;
+	font-weight: 700;
+}
