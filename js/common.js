@@ -54,18 +54,21 @@ document.addEventListener('DOMContentLoaded', () => {
 			})
 		})
 	
-		closeBtn.addEventListener('click', e => {
-			e.preventDefault()
-			modal.classList.remove('active')
-			body.classList.remove('hidden')
-			document.querySelector('header').classList.remove('modal__active')
+		closeBtn.forEach(element => { 
+			element.addEventListener('click', e => {
+				e.preventDefault()
+				modal.classList.remove('active')
+				body.classList.remove('hidden')
+				document.querySelector('header').classList.remove('modal__active')
+			})
 		})
 	}
 	
-	openSliderModal(document.querySelectorAll('a.btn.view__step'), document.querySelector('.modal__slider'), document.querySelector('.modal__slider .modal__close'))
-	openSliderModal(document.querySelectorAll('a.btn.view__gallery'), document.querySelector('.modal__slider'), document.querySelector('.modal__slider .modal__close'))
-	openSliderModal(document.querySelectorAll('a.view__img'), document.querySelector('.modal__slider'), document.querySelector('.modal__slider .modal__close'))
-	openSliderModal(document.querySelectorAll('.call__btn'), document.querySelector('.modal__call'), document.querySelector('.modal__call .modal__close'))
+	openSliderModal(document.querySelectorAll('a.btn.view__step'), document.querySelector('.modal__slider'), document.querySelectorAll('.modal__slider .modal__close'))
+	openSliderModal(document.querySelectorAll('a.btn.view__gallery'), document.querySelector('.modal__slider'), document.querySelectorAll('.modal__slider .modal__close'))
+	openSliderModal(document.querySelectorAll('a.view__img'), document.querySelector('.modal__slider'), document.querySelectorAll('.modal__slider .modal__close'))
+	openSliderModal(document.querySelectorAll('.call__btn'), document.querySelector('.modal__call'), document.querySelectorAll('.modal__call .modal__close'))
+	openSliderModal(document.querySelectorAll('.module__open'), document.querySelector('.module'), document.querySelectorAll('.module .home__back__btn'))
 
 	// liter change function
 	let literFloor = document.querySelector('.liter__info__item.floors h3.liter__info__value')
@@ -75,31 +78,37 @@ document.addEventListener('DOMContentLoaded', () => {
 	document.querySelectorAll('a.liter__btn').forEach(btn => {
 		btn.addEventListener('click', e => {
 			document.querySelectorAll('a.liter__btn').forEach(btn => { btn.classList.remove('active') })
-			e.target.classList.remove('active')
+			document.querySelectorAll('.module .liter').forEach(liter => { liter.classList.remove('active') })
+			e.target.classList.add('active')
+			console.log(e.target.className)
 			e.preventDefault()
 			switch (e.target.className) {
-				case 'liter__btn liter__1':
-					literFloor.innerHTML = '20'
+				case 'liter__btn liter__1 active':
+					literFloor.innerHTML = '12'
 					literHome.innerHTML = '56'
 					literSquare.innerHTML = '29,4-100,7 м2'
+					document.querySelector('.module .liter__1').classList.add('active')
 					break;
 
-				case 'liter__btn liter__2':
+				case 'liter__btn liter__2 active':
+					literFloor.innerHTML = '15'
+					literHome.innerHTML = '56'
+					literSquare.innerHTML = '29,4-100,7 м2'
+					document.querySelector('.module .liter__2').classList.add('active')
+					break;
+
+				case 'liter__btn liter__3 active':
+					literFloor.innerHTML = '18'
+					literHome.innerHTML = '56'
+					literSquare.innerHTML = '29,4-100,7 м2'
+					document.querySelector('.module .liter__3').classList.add('active')
+					break;
+
+				case 'liter__btn liter__4 active':
 					literFloor.innerHTML = '21'
 					literHome.innerHTML = '56'
 					literSquare.innerHTML = '29,4-100,7 м2'
-					break;
-
-				case 'liter__btn liter__3':
-					literFloor.innerHTML = '22'
-					literHome.innerHTML = '56'
-					literSquare.innerHTML = '29,4-100,7 м2'
-					break;
-
-				case 'liter__btn liter__4':
-					literFloor.innerHTML = '23'
-					literHome.innerHTML = '56'
-					literSquare.innerHTML = '29,4-100,7 м2'
+					document.querySelector('.module .liter__4').classList.add('active')
 					break;
 			
 				default:
